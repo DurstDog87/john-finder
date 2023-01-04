@@ -1,0 +1,10 @@
+.map {
+    margin-top: 1%;
+    background-color: rgb(38, 80, 196);
+}
+
+.leaflet-container {
+    margin-left: 10vw;
+    width: 90vw;
+    height: 90vh;
+}

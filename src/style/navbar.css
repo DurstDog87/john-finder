@@ -1,0 +1,59 @@
+/*top navigation*/
+.topnav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 1vh;
+    overflow: hidden;
+    background-color: rgb(38, 80, 196);
+}
+
+
+.topnav-link {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav-list-item {
+    float: left;
+}
+
+/*bottom navigation*/
+
+.sidenav {
+    justify-content: left;
+    list-style-type: none;
+    margin: 0;
+    margin-top: 1%;
+    padding: 0;
+    width: 9%;
+    background-color: rgb(38, 80, 196);
+    position: fixed;
+    height: 90vh;
+    overflow: auto;
+}
+
+/*all navigation*/
+.nav-li-a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.nav-li-a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.nav-li-a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}

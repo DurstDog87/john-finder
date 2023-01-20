@@ -1,7 +1,7 @@
 "use-strict";
 import { useEffect, useState } from "react";
 import { useMapEvents, Popup } from 'react-leaflet';
-import AddFacilForm from "../AddFacilForm";
+import AddFacilForm from "../components/AddFacilForm";
 
 //Display popup when a location on the map is clicked
 function AddFacilPopup() {

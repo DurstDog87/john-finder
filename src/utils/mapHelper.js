@@ -17,11 +17,14 @@ function AddFacilPopup() {
         //<Marker position={position} >
         <Popup closeOnEscapeKey closeOnClick position={position}>
             <div>
-                <h3>point coordinates:</h3>
-                <h3>lat: {position.lat}</h3>
-                <h3>long: {position.lng}</h3>
-                <button onClick={() => setShowForm(true)}>add a facility</button>
-                {!showForm ? null : <AddFacilForm />}
+                {!showForm ? 
+                <div>
+                    <h3>point coordinates:</h3>
+                    <h3>lat: {position.lat}</h3>
+                    <h3>long: {position.lng}</h3>  
+                    <button onClick={() => setShowForm(true)}>add a facility</button> 
+                </div>  
+                    : <AddFacilForm />}
             </div >
         </Popup>
         //</Marker>

@@ -16,28 +16,25 @@ function AddFacilPopup() {
 
     return position === null ? () => setShowForm(false) : (
         //<Marker position={position} >
-        <Popup closeOnEscapeKey closeOnClick position={position}>
-            <div>
+        <Popup position={position}>
+            <>
                 {
                 !showForm ? 
                 <div>
-                    <h3>point coordinates:</h3>
-                    <h3>lat: {position.lat}</h3>
-                    <h3>long: {position.lng}</h3>  
                     <button 
                     className="buttonBlue"
-                    onClick={() => setShowForm(true)}>add a facility</button> 
+                    onClick={() => setShowForm(true)}>add a facility here</button> 
                 </div>  
                     : 
                     <>
-                        <AddFacilForm />
+                        <AddFacilForm coords={position} />
                         <button
                         onClick={() => setShowForm(false)}
                         className='buttonCancel'
                         >Cancel</button>
                     </>
                     }
-            </div >
+            </>
         </Popup>
         //</Marker>
     )

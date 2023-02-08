@@ -2,10 +2,10 @@ import { useState } from 'react';
 import '../css/form.css';
 
 
-const AddFacilForm = (set) => {
+const AddFacilForm = ({ coords }) => {
     const [show, setShow] = useState(true);
     function handleSubmit(e){
-        e.preventDefault();
+        //e.preventDefault();
         setShow(false);
         console.log("Submit!");
     }
@@ -13,25 +13,27 @@ const AddFacilForm = (set) => {
     return (
         show &&
         <div className='form-group'>
-            <form onSubmit={handleSubmit}>
-                <label>
+            <p>{`${coords.lat}, ${coords.lng}`}</p>
+            <form className='facilityForm' onSubmit={handleSubmit}>
+                <label className='formHeaders'>
                     Description:
-                    <input type="text" name="name" />
+                    <input className='textBox' type="text" name="name" />
                 </label>
-                <label>Condition:
-                    <select defaultValue={"Select One"}>
+                <label className='formHeaders'>Condition:
+                    <select className='select' defaultValue={"Select One"}>
                         <option value="Exellent">Exellent</option>
                         <option value="Good">Good</option>
                         <option value="Passable">Passable</option>
                         <option selected value="Poor">Poor</option>
                     </select>
-                </label>
-                <label>Type:
-                    <select defaultValue={"Select One"}>
+                </label >
+                <label className='formHeaders'>Type:
+                    <select className='select' defaultValue={"Select One"}>
                         <option value={1}>Portable Toilet</option>
                         <option value={2}>Public Restroom</option>
                     </select>
                 </label>
+                <br/>
                 <input type="submit" value="Submit" className='buttonSubmit' />
             </form>
         </div>

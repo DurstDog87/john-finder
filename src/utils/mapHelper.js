@@ -1,8 +1,9 @@
 "use-strict";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useMapEvents, Popup } from 'react-leaflet';
 import AddFacilForm from "../components/AddFacilForm";
-import '../css/form.css'
+import '../css/form.css';
+import TEST_DATA from '../dev-test.json';
 
 //Display popup when a location on the map is clicked
 function AddFacilPopup() {
@@ -16,7 +17,7 @@ function AddFacilPopup() {
 
     return position === null ? () => setShowForm(false) : (
         //<Marker position={position} >
-        <Popup position={position}>
+        <Popup className="popup" position={position}>
             <>
                 {
                 !showForm ? 
@@ -27,9 +28,12 @@ function AddFacilPopup() {
                 </div>  
                     : 
                     <>
-                        <AddFacilForm coords={position} />
+                        <AddFacilForm coords={position} user={TEST_DATA.test_user} />
                         <button
-                        onClick={() => setShowForm(false)}
+                        onClick={() => {
+                            setShowForm(false);
+                            console.log("form canceled");
+                        }}
                         className='buttonCancel'
                         >Cancel</button>
                     </>
